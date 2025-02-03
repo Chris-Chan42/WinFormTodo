@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WinFormTodo
 {
@@ -14,6 +15,19 @@ namespace WinFormTodo
         public DateTime DueDate { get; set; }
         public bool IsDone { get; set; }
 
+        public string GetStatus()
+        {
+            string status = "";
+            if (IsDone)
+            {
+                status = "Status: Complete";
+            }
+            else
+            {
+                status = "Status: Incomplete";
+            }
+            return status;
+        }
         public Todo(string description, DateTime date, bool doneState = false)
         {
             ObjectCounter++;
@@ -25,7 +39,7 @@ namespace WinFormTodo
 
         public override string ToString()
         {
-            return $"{Id} - {DueDate} - {TaskDescription}";
+            return $"{Id} - {DueDate} - {TaskDescription} - {GetStatus()}";
         }
     }
 }
