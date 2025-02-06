@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -96,32 +97,32 @@ namespace WinFormTodo
 
         private void lbTaskList_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //MessageBox.Show($"Selected Index is: {lbTaskList.SelectedIndex}");
+
             int selectedIndex = lbTaskList.SelectedIndex;
             string selectedItem = (string)lbTaskList.SelectedItem;
-
 
             if (selectedIndex == -1)
             {
                 return;
             }
 
-            if(selectedItem == null)
+            if (selectedItem == null)
             {
                 MessageBox.Show("No item selected at the index.");
                 return;
             }
 
-            int id = Int32.Parse(selectedItem.Split(" - ")[0]);
 
-            var todo = TaskList.Find(t =>  t.Id == id);
+            int id = Int32.Parse(selectedItem.Split(new string[]{" - "}, StringSplitOptions.None)[0]);
+
+            var todo = TaskList.Find(t => t. Id == id);
 
             if (todo != null)
             {
                 todo.IsDone = !todo.IsDone;
-
                 UpdateListBox();
             }
-
         }
     }
 }
