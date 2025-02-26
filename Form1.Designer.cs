@@ -36,8 +36,7 @@
             this.txtTaskDescription = new System.Windows.Forms.TextBox();
             this.lblTask = new System.Windows.Forms.Label();
             this.gbTaskList = new System.Windows.Forms.GroupBox();
-            this.lbTaskList = new System.Windows.Forms.ListBox();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.fpTasks = new System.Windows.Forms.FlowLayoutPanel();
             this.gbTaskForm.SuspendLayout();
             this.gbTaskList.SuspendLayout();
             this.SuspendLayout();
@@ -114,32 +113,20 @@
             // 
             // gbTaskList
             // 
-            this.gbTaskList.Controls.Add(this.lbTaskList);
-            this.gbTaskList.Controls.Add(this.listView1);
-            this.gbTaskList.Location = new System.Drawing.Point(12, 110);
+            this.gbTaskList.Controls.Add(this.fpTasks);
+            this.gbTaskList.Location = new System.Drawing.Point(13, 110);
             this.gbTaskList.Name = "gbTaskList";
             this.gbTaskList.Size = new System.Drawing.Size(295, 378);
             this.gbTaskList.TabIndex = 1;
             this.gbTaskList.TabStop = false;
             this.gbTaskList.Text = "Task List";
             // 
-            // lbTaskList
+            // fpTasks
             // 
-            this.lbTaskList.FormattingEnabled = true;
-            this.lbTaskList.Location = new System.Drawing.Point(9, 19);
-            this.lbTaskList.Name = "lbTaskList";
-            this.lbTaskList.Size = new System.Drawing.Size(280, 355);
-            this.lbTaskList.TabIndex = 1;
-            this.lbTaskList.SelectedIndexChanged += new System.EventHandler(this.lbTaskList_SelectedIndexChanged);
-            // 
-            // listView1
-            // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(9, 19);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(280, 353);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.fpTasks.Location = new System.Drawing.Point(8, 19);
+            this.fpTasks.Name = "fpTasks";
+            this.fpTasks.Size = new System.Drawing.Size(280, 353);
+            this.fpTasks.TabIndex = 0;
             // 
             // Form1
             // 
@@ -167,8 +154,7 @@
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnAddTodo;
         private System.Windows.Forms.GroupBox gbTaskList;
-        private System.Windows.Forms.ListView listView1;
-        private System.Windows.Forms.ListBox lbTaskList;
+        private System.Windows.Forms.FlowLayoutPanel fpTasks;
     }
 }
 
